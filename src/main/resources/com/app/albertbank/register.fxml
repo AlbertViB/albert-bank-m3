@@ -28,6 +28,6 @@
    <PasswordField fx:id="confirmPassword" layoutX="285.0" layoutY="310.0" maxWidth="250.0" promptText="Repeat password" />
    <Text fx:id="error" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" />
     <HBox alignment="CENTER_RIGHT" fillHeight="false" maxHeight="-Infinity" maxWidth="250.0" prefWidth="250.0">
-        <Button mnemonicParsing="false" onAction="#handleRegisterButton" style="-fx-background-color: #a7f3d0;" text="Register" />
+        <Button fx:id="register" mnemonicParsing="false" onAction="#handleRegisterButton" style="-fx-background-color: #a7f3d0;" text="Register" />
     </HBox>
 </VBox>

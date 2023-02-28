@@ -24,6 +24,8 @@ public class RegisterController {
     private PasswordField confirmPassword;
     @FXML
     private Text error;
+    @FXML
+    private Button register;
 
     @FXML
     private void goBackButtonRedirect() throws IOException {
@@ -38,9 +40,11 @@ public class RegisterController {
     }
 
     @FXML
-    private void handleRegisterButton() {
+    private void handleRegisterButton() throws IOException {
         if (checkRightInputs()) {
-            // TODO Register the user and redirect him to the succesfully registered page
+            new User(name.getText(), email.getText(), password.getText());
+            Scene scene = register.getScene();
+            scene.setRoot(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("registerSuccessful.fxml"))));
         }
     }
 
