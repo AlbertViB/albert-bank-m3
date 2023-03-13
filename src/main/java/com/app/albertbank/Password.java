@@ -8,10 +8,21 @@ public class Password {
 
     public String encryptedPassword;
 
+    /**
+     * Constructor for the Password object that encrypts the given password.
+     *
+     * @param password the password to be encrypted
+     */
     public Password(String password) {
         this.encryptedPassword = encrypt(password);
     }
 
+    /**
+     * This method encrypts a password using SHA-256 hashing.
+     *
+     * @param password the password to be encrypted
+     * @return the encrypted password as a hexadecimal string
+     */
     public static String encrypt(String password) {
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");

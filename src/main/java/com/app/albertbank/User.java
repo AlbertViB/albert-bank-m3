@@ -10,6 +10,11 @@ public class User {
     private final Password password;
     private ArrayList<compteCorrent> comptes;
 
+    /**
+     * @param nom name of the user
+     * @param email email of the user
+     * @param password users password without being hashed
+     */
     public User(String nom, String email, String password) {
         this.nom = nom;
         this.email = email;
@@ -18,10 +23,13 @@ public class User {
         insertUserIntoFile();
     }
 
+    /**
+     * This method adds a row into the users file
+     */
     private void insertUserIntoFile() {
         try {
             try (FileWriter f = new FileWriter("users.txt", true)) {
-                f.write(nom + "," + email + "," + password.encryptedPassword);
+                f.write(nom + "," + email + "," + password.encryptedPassword + "\n");
             }
         } catch (IOException e) {
             e.printStackTrace();

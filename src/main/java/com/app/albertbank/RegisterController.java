@@ -27,6 +27,11 @@ public class RegisterController {
     @FXML
     private Button register;
 
+    /**
+     * This method redirects the user back to the login page when the go back button is clicked.
+     *
+     * @throws IOException if an input/output exception occurs when loading the loginMain.fxml file
+     */
     @FXML
     private void goBackButtonRedirect() throws IOException {
         System.out.println("Go back button clicked"); // TODO Remove this after testing
@@ -34,11 +39,21 @@ public class RegisterController {
         scene.setRoot(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("loginMain.fxml"))));
     }
 
+    /**
+     * This method checks whether the password and confirm password fields have the same value.
+     *
+     * @return true if the password and confirm password fields have the same value, false otherwise
+     */
     @FXML
     private boolean checkIfSamePasswords() {
         return password.getText().equals(confirmPassword.getText());
     }
 
+    /**
+     * This method checks if the inputs are valid and if they are, it creates a new user.
+     *
+     * @throws IOException if an input/output exception occurs when loading the registerSuccessful.fxml file
+     */
     @FXML
     private void handleRegisterButton() throws IOException {
         if (checkRightInputs()) {
@@ -48,6 +63,11 @@ public class RegisterController {
         }
     }
 
+    /**
+     * This method checks if the inputs of the register form are correct or not
+     *
+     * @return if are there any errors
+     */
     private boolean checkRightInputs() {
         error.setText("");
         // First we check if any of the inputs are void

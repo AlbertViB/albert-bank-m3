@@ -12,6 +12,11 @@ public class LoginController {
     @FXML
     private Button register;
 
+    /**
+     * This method handles the action when the register button is clicked, redirecting the user to the registration page.
+     *
+     * @throws IOException if an input/output exception occurs when loading the register.fxml file
+     */
     @FXML
     protected void registerButtonRedirect() throws IOException {
         System.out.println("Register button clicked"); // TODO Remove this after testing
